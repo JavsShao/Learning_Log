@@ -19,6 +19,7 @@ class Entry(models.Model):
     class Meta:
         verbose_name_plural = 'entries'
 
+
     def __str__(self):
         """返回模型类的字符串表示"""
         return self.text[:50] + '...'
