@@ -5,8 +5,8 @@
     <title>这是父模板</title>
 </head>
 <body>
-        <a href="{%url 'learninglogs:index'%}">Learning Log</a> -
-        <a href="{%url 'learninglogs:topics'%}">Topics</a>
+        <a href="{% url 'learninglogs:index' %}">Learning Log</a> -
+        <a href="{% url 'learninglogs:topics' %}">Topics</a>
 
     {% block content %}{% endblock content %}
 
