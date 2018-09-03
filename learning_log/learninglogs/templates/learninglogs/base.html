@@ -5,10 +5,16 @@
     <title>这是父模板</title>
 </head>
 <body>
-        <a href="{% url 'learninglogs:index' %}">Learning Log</a> -
-        <a href="{% url 'learninglogs:topics' %}">Topics</a>
+    <p>
+        <a href="{% url 'learninglogs:index' %}">读书笔记</a> -
+        <a href="{% url 'learninglogs:topics' %}">主题</a> -
+        {% if user.is_authenticated %}
+            你好,{{ user.username }}.
+        {% else %}
+            <a href="{% url 'users:login' %}">登录</a>
+        {% endif %}
 
-    {% block content %}{% endblock content %}
-
+        {% block content %}{% endblock content %}
+    </p>
 </body>
 </html>
