@@ -8,7 +8,7 @@
   <meta http-equiv="x-ua-compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Learning Log</title>
+  <title>似水流年</title>
 
   {% bootstrap_css %}
   {% bootstrap_javascript %}
@@ -23,21 +23,21 @@
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
               data-target="#navbar" aria-expanded="false" aria-controls="navbar">
       </button>
-      <a class="navbar-brand" href="{% url 'learninglogs:index' %}">Learning Log</a>
+      <a class="navbar-brand" href="{% url 'learninglogs:index' %}">似水流年</a>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li><a href="{% url 'learninglogs:topics' %}">Topics</a></li>
+        <li><a href="{% url 'learninglogs:topics' %}">黄金时代</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
         {% if user.is_authenticated %}
-          <li><a>Hello, {{ user.username }}.</a></li>
-          <li><a href="{% url 'users:logout' %}">log out</a></li>
+          <li><a>你好哇, {{ user.username }}.</a></li>
+          <li><a href="{% url 'users:logout' %}">离开</a></li>
         {% else %}
-          <li><a href="{% url 'users:register' %}">register</a></li>
-          <li><a href="{% url 'users:login' %}">log in</a></li>
+          <li><a href="{% url 'users:register' %}">拥有</a></li>
+          <li><a href="{% url 'users:login' %}">进来</a></li>
         {% endif %}
       </ul>
     </div><!--/.nav-collapse -->

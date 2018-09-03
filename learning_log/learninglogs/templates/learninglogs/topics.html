@@ -1,7 +1,7 @@
 {% extends "learninglogs/base.html" %}
 
 {% block header %}
-  <h1>Topics</h1>
+  <h1>我的精神家园</h1>
 {% endblock header %}
 
 {% block content %}
@@ -14,9 +14,9 @@
         </h3>
       </li>
     {% empty %}
-      <li>No topics have been added yet.</li>
+      <li>身体和心灵，总要有一个在路上，写点什么吧.</li>
     {% endfor %}
   </ul>
-  <h3><a href="{% url 'learninglogs:new_topic' %}">Add a new topic:</a></h3>
+  <h3 ><a href="{% url 'learninglogs:new_topic' %}">添加分类</a></h3>
 
 {% endblock content %}

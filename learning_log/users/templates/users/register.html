@@ -12,7 +12,7 @@
         {% csrf_token %}
         {{ form.as_p }}
 
-        <button name="submit">注册</button>
+        <button name="submit">拥有</button>
         <input type="hidden" name="next" value="{% url 'learninglogs:index' %}" />
     </form>
 

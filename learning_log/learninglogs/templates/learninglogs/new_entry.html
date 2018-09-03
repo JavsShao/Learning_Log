@@ -13,12 +13,12 @@
 <p>
     <a href="{% url 'learninglogs:topic' topic.id%}">{{ topic }}</a>
 </p>
-<p>添加新条目</p>
+<p>我有新文章</p>
 
 <form action="{% url 'learninglogs:new_entry' topic.id %}" method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button name="submit">添加新条目</button>
+    <button name="submit">添加</button>
 </form>
 
 {% endblock content %}

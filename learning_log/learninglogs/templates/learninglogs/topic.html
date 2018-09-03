@@ -6,7 +6,7 @@
 
 {% block content %}
   <p>
-    <a href="{% url 'learninglogs:new_entry' topic.id %}">add new entry</a>
+    <a href="{% url 'learninglogs:new_entry' topic.id %}">写点新东西</a>
   </p>
 
   {% for entry in entries %}
@@ -15,8 +15,7 @@
         <h3>
           {{ entry.date_added|date:"M d, Y H:i" }}
           <small>
-            <a href="{% url 'learninglogs:edit_entry' entry.id %}">edit
-              entry</a>
+            <a href="{% url 'learninglogs:edit_entry' entry.id %}">修改</a>
           </small>
         </h3>
       </div>
@@ -26,7 +25,7 @@
     </div> <!-- panel -->
   {% empty %}
     <li>
-      There are no entries for this topic yet.
+      一个人此生不应该只有，还应该拥有诗意的世界。
     </li>
   {% endfor %}
 

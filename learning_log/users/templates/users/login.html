@@ -2,7 +2,7 @@
 {% load bootstrap3 %}
 
 {% block header %}
-  <h2>Log in to your account.</h2>
+  <h2>输入你的安全秘钥！</h2>
 {% endblock header %}
 
 {% block content %}
@@ -12,7 +12,7 @@
     {% bootstrap_form form %}
 
     {% buttons %}
-      <button class="btn btn-primary" name="submit">log in</button>
+      <button class="btn btn-primary" name="submit">进来</button>
     {% endbuttons %}
     <input type="hidden" name="next" value="{% url 'learninglogs:index' %}"/>
   </form>
