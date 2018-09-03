@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>topics</title>
+    <title>Title</title>
 </head>
 <body>
 {% extends "learninglogs/base.html" %}
@@ -10,18 +10,23 @@
 {% block content %}
 
 <p>
-    Topics
+    Topic:{{ topic }}
 </p>
 
 <ul>
     {% for topic in topics %}
-    <a href="{%url 'learninglogs:topic' topic.id%}">{{ topic }}</a>
+    <li>
+        <p>{{ entry.date_added|date:'M d,Y H:i' }}</p>
+        <p>{{ entry.text|linebreaks }}</p>
+    </li>
     {% empty %}
-        <li>No topics have been added yet.</li>
+        <li>There are no entries for this topic yet. </li>
     {% endfor %}
 </ul>
 
 {% endblock content %}
+
+
 
 </body>
 </html>
