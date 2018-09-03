@@ -1,27 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>topics</title>
-</head>
-<body>
 {% extends "learninglogs/base.html" %}
+
+{% block header %}
+  <h1>Topics</h1>
+{% endblock header %}
 
 {% block content %}
 
-<p>
-    Topics
-</p>
-
-<ul>
+  <ul>
     {% for topic in topics %}
-    <a href="{%url 'learninglogs:topic' topic.id%}">{{ topic }}</a>
+      <li>
+        <h3>
+          <a href="{% url 'learninglogs:topic' topic.id %}">{{ topic }}</a>
+        </h3>
+      </li>
     {% empty %}
-        <li>No topics have been added yet.</li>
+      <li>No topics have been added yet.</li>
     {% endfor %}
-</ul>
-<a href="{% url 'learninglogs:new_topic' %}">添加新主题</a>
-{% endblock content %}
+  </ul>
+  <h3><a href="{% url 'learninglogs:new_topic' %}">Add a new topic:</a></h3>
 
-</body>
-</html>
+{% endblock content %}

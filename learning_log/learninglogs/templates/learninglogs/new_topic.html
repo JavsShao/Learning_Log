@@ -1,24 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
 {% extends "learninglogs/base.html" %}
+{% load bootstrap3 %}
+
+{% block header %}
+  <h2>Add a new topic:</h2>
+{% endblock header %}
 
 {% block content %}
-<p>
-    添加新主题：
-</p>
 
-<form action="{% url 'learninglogs:new_topic' %}" method="post">
+  <form class="form" action="{% url 'learninglogs:new_topic' %}" method="post">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button name="submit">添加主题</button>
-</form>
-{% endblock content %}
+    {% bootstrap_form %}
 
-</body>
-</html>
+    {% buttons %}
+      <button class="btn btn-primary" name="submit">add topic</button>
+    {% endbuttons %}
+  </form>
+
+{% endblock content %}
