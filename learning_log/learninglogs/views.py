@@ -15,7 +15,7 @@ def index(request):
 @login_required
 def topics(request):
     """显示所有的主题"""
-    topic = Topic.objects.filter(owner=request.user).order_by('date_added')
+    topics = Topic.objects.filter(owner=request.user).order_by('date_added')
     context = {'topics':topics}
     return render(request,'learninglogs/topics.html',context)
 
@@ -41,7 +41,9 @@ def new_topic(request):
         # POST提交的数据，对数据进行处理
         form = TopicForm(request.POST)
         if form.is_valid():
-            form.save()
+            new_topic = form.save(commit=False)
+            new_topic.owner = request.user
+            new_topic.save()
             return HttpResponseRedirect(reverse('learninglogs:topics'))
 
     context = {'form':form}
