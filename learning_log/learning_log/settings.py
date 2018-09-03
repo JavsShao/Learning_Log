@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     # 添加我的应用程序
     'learninglogs.apps.LearninglogsConfig',
     'users.apps.UsersConfig',
+
+    # 第三方应用程序
+    'bootstrap3',
 ]
 
 MIDDLEWARE = [
