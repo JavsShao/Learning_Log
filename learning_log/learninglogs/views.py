@@ -71,6 +71,8 @@ def edit_entry(request,entry_id):
     """用户可以编辑既有的条目"""
     entry = Entry.objects.get(id=entry_id)
     topic = entry.topic
+    if topic.owner != request.user:
+        raise Http404
 
     if request.method != 'POST':
         # 初次请求，使用当前条目填充表单
